@@ -1,0 +1,55 @@
+ MIRO Whiteboard       https://miro.com/app/board/o9J_klSqCSY=/
+ 
+ 
+ 
+ 
+ Base2 = Binary
+ Base10 = 0-9
+ base16 = Hex
+ Encapsulation
+    
+Physical Layer
+    Responsibilities
+        HArdware specifications
+        Encoding and signaling
+        Data Transmission and Reception
+        Physical Network Design
+Data Link Layer
+    MAC (Media Access Control)
+        can be referenced
+        Gives a "unique name" on your local network
+        ARP translates MAC and retrieves a corresponding IP address
+    LLC (Logical Link Control)
+    
+    Ethernet Header
+        14byte MAC Header
+            Destination MAC
+            SOURCE MAC
+            Ethertype
+                IPv4 = 0x0800
+                ARP = 0x0806
+                IPv6 = 0x86DD
+                VLAN tag = 0x8100
+            802.1Q
+            IPv6
+            ICMP
+Layer 2 Switching
+    Switch Operation
+        Fast Forward - Only Destination MAC
+        Fragment Free - First 64 bytes
+        Store and Forward - Entire Frame and FCS
+    CAM Table
+        Learn = Examine Source MAC
+        Forward = Examine Dest. MAC
+    
+    Port Security - When an unknown device accesses a switch _____
+        Modes
+            Shutdown
+                Shutdown the port to all traffic
+            restrict
+                Deny all traffic from untrusted MACs
+            protect
+                Log the event but no action taken
+
+
+
