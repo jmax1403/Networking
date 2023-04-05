@@ -50,6 +50,50 @@ Layer 2 Switching
                 Deny all traffic from untrusted MACs
             protect
                 Log the event but no action taken
+                
+                
+                
+Layer 4
+Trasnport Layer
+    TCP Header
+        TCP flags
+            Coach Explained to University of Alaska to Play Really Snowy Football
+            
+Layer 5
+Session Layer
+    Protocols
+        SOCKS (TCP 1080)
+        NetBIOS Dgram service (UDP 138) / Netbios Session service (TCP 139)
+            SAMBA and CIFS are just flavors of SMB
+        PPTP (TCP 1723)/L2TP (TCP 1723)
+        RPC
+    Wildcard addresses/ports
+        IPv4 = 0.0.0.0:*
+        IPv6 = :::
 
-
-
+Layer 6
+Presentation Layer
+    Translation
+    Formating
+    Encoding (ASCII,EBCDIC, HEX, BASE64)
+    Encryption (Symmetric, Asymmetric)
+    Compression
+    
+Layer 7
+Application Layer
+    FTP (TCP 20/21)
+        21 (Command Channel)
+        20 (Data Channel)
+    SSH (TCP 22)
+        Client/Server Authentication
+        Asymmetric for key exchange
+        Symmetric for session
+        User Authentication
+        Data Stream Channeling
+    Telnet
+        Insecure
+        Simple
+    TACACS
+    POP (TCO 110)
+    UDP 67/68
+    
