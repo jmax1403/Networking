@@ -1,0 +1,32 @@
+Capture Libraries
+    Libpcap
+    Winpcap
+    NPCAP
+"ip a" = command to show interfaces on your box
+
+Wireshark
+    Convenient, Easy to read
+    Not efficient for large pcaps
+TCPDUMP
+    Command line oriented
+    more efficient for large captures
+    curl cht.sh/tcpdump
+    when running tcpdump on an interface on yor box requires sudo
+    e.g.
+        sudo tcpdump -i eth0 -XXvv -w some.pcap
+            #"-w" = writes to file some.pcap
+                can open pcap in wireshark as well
+            #"-r" = reads from that file
+BPF
+    tcpdump {A} [B:C] {D} {E} {F} {G}
+
+    A = Protocol (ether | arp | ip | ip6 | icmp | tcp | udp)
+    B = Header Byte offset
+    C = optional: Byte Length. Can be 1, 2 or 4 (default 1)
+    D = optional: Bitwise mask (&)
+    E = Operator (= | == | > | < | <= | >= | != | () | << | >>)
+    F = Result of Expresion
+    G = optional: Logical Operator (&& ||) to bridge expressions
+    
+    E.G.
+        tcpdump 'ether[12:2] = 0x0800 && (tcp[2:2] != 22 && tcp[2:2] != 23)'
