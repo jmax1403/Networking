@@ -1,0 +1,40 @@
+Socket - IP and port
+           User Space sockets  -  do not require elevated privileges to perform actions fro user
+                Stream Sockets - connection oriented (TCP) and sequenced, TCP, SCTP, adn Bluetooth
+                Datagram Sockets - connectionless, used for UDP packets
+           Kernel Space sockets (i.e. sudo, nmap)  -  requires esclated privileges for user to act
+                Raw Sockets - direct sending and recieving of IP packets without protocol specific formatting
+           user space applications
+                using tcpdump or wireshark to read a file
+                use nmap w no switches
+                netcat to create a listener
+           kernel space applications
+                tcpdump and wireshark to capture packets on the wire
+                nmap for OS identification
+                netcat to create a listener in well-known port range
+                scapy to craft/mod a packet
+                using python to create or mod raw sockets
+           Python ^_^ UwU
+                string.lower()
+                string.upper()
+                ctrl +l to clear screen in python
+                type(<object>)
+                string.add('<new>')
+                coolcars={"make":"Ford","model":"Mustang","year":"1969"}
+                    coolcars['make']
+              Exceptions: to cover exploitable oversights
+              import socket
+                s = socket.socket(socket.FAMILY, socket.TYPE, socket.PROTOCOL)
+            socket families
+                ipv4 af_inet
+                ipv6 af_inet6
+                TCP sock_stream
+                UDP sock_dgram
+                    sock_raw
+            exceptions
+                socket.error
+                socket.herror
+                socket.gaierror
+                socket.timeout
+            Functions
+                socket.create_server
