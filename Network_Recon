@@ -1,0 +1,50 @@
+Active
+    
+    Active External
+        Network Scanning
+            Remote to local
+            Local to remote
+            local to local
+            remote to remote
+            
+            Types
+                Broadcast Ping and Ping sweep
+                ARP scan
+                SYN scan
+                Full connect scan (default for nmap)
+                Null scan
+                FIN scan
+                XMAS tree scan
+                UDP scan
+                Idle scan
+            Code Syntax
+                nmap [Options] [Target IP/ Subnet]
+                nc [Options] [Target IP] [Target Port]
+                    (used for banner grabbing)
+Passive
+    Gather information without direct interaction
+    Lower risk of discovery
+    Not as straightfoward as active
+    
+    Tools
+        WHOIS query
+        Passive OS Fingerprinting
+        Google Search (Google Dork)
+    Passive External
+        DNS
+            resolves hostnames to IP
+            RFC 3912
+            WHOIS
+        Host Histroy
+            netcraft
+            wayback machine
+            
+            
+https://git.cybbh.space/net/public/raw/master/modules/networking/slides/images/Recon2.png
+
+
+
+
+show config
+show int
+vyos:password
