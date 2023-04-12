@@ -1,0 +1,33 @@
+SSH
+    Provides authentication, encryption, and integrity.
+    Allows remote terminal sessions
+    Used for tunneling
+    
+SSH LOCAL PORT FORWARDING
+    ssh -p <optional alt port> <user>@<pivot ip> -L <local bind port>:<tgt ip>:<tgt port> -NT
+
+    or
+
+    ssh -L <local bind port>:<tgt ip>:<tgt port> -p <alt port> <user>@<pivot ip> -NT]
+SSH DYNAMIC PORT FORWARDING
+    ssh -D <port> -p <alt port> <user>@<pivot ip> -NT
+        Proxychains default port is 9050
+        
+SSH REMOTE PORT FORWARDING
+    ssh -p <optional alt port> <user>@<remote ip> -R <remote bind port>:<tgt ip>:<tgt port> -NT
+
+    or
+
+    ssh -R <remote bind port>:<tgt ip>:<tgt port> -p <alt port> <user>@<remote ip> -NT
+    
+    then 
+    
+    IH> ssh -p <port> <user>@localhost -L <newport>:localhost:<remote bind port>
+    
+    test by 
+    IH> ssh -p <"Newport"> <user>@localhost
+    
+    
+    
+    
+    TEST CONNECTION PIECE THEN ADD TUNNEL PIECE
