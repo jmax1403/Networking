@@ -60,8 +60,16 @@ COMMON METHODS FOR TRANSFERRING DATA
             Client (sends file): nc 10.2.0.2 9001 < file.txt
             Listener (receive file): nc -l -p 9001 > newfile.txt
             
-            
-            
+        Relay Demos
+            On Client relay
+                mknod mypipe p OR mkfifo mypipe
+                nc 10.1.0.2 9002 0< mypipe | nc 10.2.0.2 9001 1> mypipe
+            On Listener2 (sends)
+                nc -l -p 9002 < infile.txt
+            On Listener1 (receives)
+                nc -l -p 9001 > outfile.txt
+                
+            writes the output to listener1 to listener2 through the named pipe
             
             
             
