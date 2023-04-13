@@ -1,0 +1,21 @@
+Net recon methodology
+    1.Host Discovery(nmap,scan.sh, nc, ping sweep)
+    2.Port Discovery (nmap, scan.sh, nc)
+    3.Port Validation (aka banner grabbing - nc)
+    4.Follow on actions(based on ports)
+        a.if port is 21 or 80 wget -r IP or wget -r ftp://IP
+        b.if port is 22 or 23: connect and do passive recon
+Scan methodology
+    1.Quick Scan port 21-23 80
+    2.Specific Ports based on hints/clues found
+    3.Well known port range 1-1024
+    4.Chunks of 2000 or first 10000
+    5.Hail Mary 1-65335
+Passive recon methodology
+    1.hostname
+    2.Interfaces and subnets? ip a, ip neigh
+    3.Neighbors? arp -a, ip neigh
+    4.Files of Interest (pcaps, flags, etc): find
+    5. Other ports are listening? ss -nltp
+    6.Available tools? which tcpdump wireshark nmap wget curl
+        a.We may also have to sniff for additional creds in the clear if hinted to do so
