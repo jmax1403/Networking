@@ -1,0 +1,39 @@
+fingerprinting and host identification
+             PASSIVE OS Fingerprinting           tool P0F
+                intial TTL, fragmentation flags, IP Header lengths, window size, TCP options
+                    config in /etc/p0f/p0f.fp
+                    Look at signature list: less -N /etc/p0f/p0f.fp
+                    sudo p0f -i eth0
+                    sudo tcpdump -r wget.pcap -n | awk '{print $3}' | sort -u | uniq -c
+                    sudo p0f -r wget.pcap | cat -n (| egrep -i "mtu")
+                    sudo cat /var/log/p0f.log -n
+                    sudo cat /var/log/p0f.log -n | grep 'mod=syn'   -   find initial connection
+                    sudo cat /var/log/p0f.log -n | grep 'mod=syn' | grep "subj=cli"   -   where client initiated connection
+                    sudo cat /var/log/p0f.log -n | grep 'mod=syn' | grep "subj=cli" | grep "srv=10.50.25.35/80" - client initiated initial connection, and web server 10.50.25.35
+            Traffic sniffing - made possible by libraries
+                libraries
+                    libpcap
+                    wincap
+                    npcap
+                baseline to determine what is normal -------- baseline muy importante
+                    snapshot of network, limited by storage
+                    bigger snapshot is better for more accurate baseline
+                    scheduled actions on network ie maintenance
+
+        Network Data Types
+            Full Packet Capture Data
+            Session Data
+                sflow
+                netflow
+            statistical data
+            Packet String Data
+            Alert Data
+            Log Data
+        Data Collection Devices
+            sensors
+                In-Line
+                Passive
+        Data Collection Methods
+            TAP
+            SPAN
+            ARP Spoofing (MiTM)
