@@ -1,0 +1,12 @@
+ACL CREATION
+    Demo> enable #enter privileged exec mode
+    Demo# configure terminal #enter global config mode
+    Demo(config)# access-list 37 ... (output omitted) ...
+    Demo(config)# ip access-list standard block_echo_request
+    Demo(config)# access-list 123  ... (output omitted) ...
+    Demo(config)# ip access-list extended zone_transfers
+    
+    
+Snort
+    sudo tcpdump -tnr ,log. | awk '{print $2} {print $4}' | sort | sed 's/:$//' | uniq -c
+    sudo snort -r pcap -c /etc/snort/snort.conf
