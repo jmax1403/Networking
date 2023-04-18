@@ -93,8 +93,8 @@ NFTABLES
                 sudo iptables -P INPUT DROP
                     changes all Policies in filters to DROP
                 
-                sudo iptables -A INPUT -p tcp -m multiport --ports 60106011,6012 -j ACCEPT
-                sudo iptables -A OUTPUT -p tcp -m multiport --ports 6010sudo apt-wwwwACCEPT
+                sudo iptables -A INPUT -p tcp -m multiport --ports 6010,6011,6012 -j ACCEPT
+                sudo iptables -A OUTPUT -p tcp -m multiport --ports 6010,6011,6012 -j ACCEPT
                     allows input and output from x11 forwarding
                 for CHAIN in INPUT OUTPUT FORWARD;do sudo iptables -P $CHAIN DROP;done
                     set all filter rules to DROP
